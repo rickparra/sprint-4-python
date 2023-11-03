@@ -1,0 +1,47 @@
+Henrique Parra Benitez, RM551973, Nick no GitHub: rickparra
+Roberto Oliveira Azzalin Navas, RM551460, Nick no GitHub: Robertooan07
+Tony Willian da Silva Segalin, RM550667, Nick no GitHub: TonyWillianFIAP
+Julia Amorim Bezerra, RM99609, Nick no GitHub: juamori
+
+
+
+O código desenvolvido consiste em um sistema de gerenciamento de contas de usuários e predição usando machine leanring.
+
+Este código Python realiza várias tarefas, incluindo o tratamento de dados, a criação de um modelo de classificação, a realização de previsões e a implementação de um sistema de login. Aqui estão as principais funcionalidades:
+
+1. Leitura de Dados:
+   O código utiliza a biblioteca Pandas para ler um conjunto de dados de um arquivo CSV chamado 'dataset_8_urbanshield.csv'. Os dados são armazenados em um DataFrame chamado 'df'.
+
+2. Renomeação de Colunas:
+   As colunas do DataFrame 'df' são renomeadas usando um dicionário 'novo_nome_colunas'. Isso mapeia os nomes de colunas originais para novos nomes desejados.
+
+3. Mapeamento de Categorias:
+   Os valores numéricos na coluna 'classificacao' são mapeados para categorias como 'Segura', 'Perigosa' e 'Muito Perigosa'.
+
+4. Codificação da Variável Alvo:
+   A variável alvo 'classificacao' é codificada usando um objeto LabelEncoder da biblioteca scikit-learn, transformando-a em valores numéricos para uso em modelos de aprendizado de máquina.
+
+5. Divisão em Conjuntos de Treinamento e Teste:
+   Os dados são divididos em conjuntos de treinamento (X_train, y_train) e teste (X_test, y_test) usando a função 'train_test_split' do scikit-learn. Isso é essencial para treinar e avaliar o modelo.
+
+6. Criação e Treinamento do Modelo:
+   Um modelo de classificação Random Forest é criado e treinado usando o conjunto de treinamento. O modelo é armazenado na variável 'model'.
+
+7. Previsões e Avaliação do Modelo:
+   O modelo é usado para fazer previsões no conjunto de teste ('X_test'), e a acurácia das previsões é calculada usando a função 'accuracy_score' do scikit-learn. Além disso, um relatório de classificação é gerado usando 'classification_report'.
+
+8. Funções de Login:
+   O código implementa um sistema de login que permite aos usuários criar contas, fazer login e realizar previsões com base no modelo treinado.
+
+   - 'carregar_contas' carrega contas de usuários previamente criadas de um arquivo JSON ('contas.json').
+   - 'salvar_contas' salva as contas de usuário em um arquivo JSON após alterações.
+   - 'criar_conta' permite aos usuários criar uma conta com um nome de usuário e senha. Os detalhes da conta são armazenados no dicionário 'contas' e posteriormente salvo.
+   - 'fazer_login' permite que os usuários façam login fornecendo nome de usuário e senha correspondentes. Se as credenciais estiverem corretas, eles acessam o segundo menu.
+
+9. Menus de Interação:
+   Há dois menus de interação com o usuário.
+   
+   - O primeiro menu oferece opções para criar uma conta, fazer login e sair.
+   - O segundo menu (acessível após o login bem-sucedido) permite que os usuários insiram dados sobre uma rua e obtenham uma previsão de classificação com base no modelo.
+
+Este código combina o tratamento de dados, treinamento de um modelo de classificação e implementação de um sistema de login para prever a classificação de ruas com base em algumas características. Além disso, ele oferece interações com o usuário por meio de menus.
