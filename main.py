@@ -1,25 +1,25 @@
 import json
 import pandas as pd
-import os
-import webbrowser
-import seaborn as sns
-import numpy as np
-import matplotlib.pyplot as plt
-import plotly.express as px
-import plotly.graph_objects as go
-import geopandas as gpd
-from sklearn.cluster import KMeans
-from sklearn.neighbors import KNeighborsClassifier
+# import os
+# import webbrowser
+# import seaborn as sns
+# import numpy as np
+# import matplotlib.pyplot as plt
+# import plotly.express as px
+# import plotly.graph_objects as go
+# import geopandas as gpd
+# from sklearn.cluster import KMeans
+# from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report
-import tensorflow as tf
-from tensorflow import keras
-import time
-from keras.utils import to_categorical
-from keras.models import Sequential
-from keras.layers import Dense, Dropout
+# import tensorflow as tf
+# from tensorflow import keras
+# import time
+# from keras.utils import to_categorical
+# from keras.models import Sequential
+# from keras.layers import Dense, Dropout
 
 # Pandas
 df = pd.read_csv('dataset_8_urbanshield.csv')
@@ -65,9 +65,6 @@ y_pred = model.predict(X_test)
 # Avalie o desempenho do modelo
 accuracy = accuracy_score(y_test, y_pred)
 report = classification_report(y_test, y_pred, target_names=label_encoder.classes_)
-
-print(f'Acurácia do modelo: {accuracy:.2f}')
-print('Relatório de Classificação:\n', report)
 
 # Funções de login
 def carregar_contas():
